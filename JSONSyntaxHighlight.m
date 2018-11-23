@@ -55,7 +55,7 @@
         
         // parse the JSON if possible
         if ([NSJSONSerialization isValidJSONObject:self.JSON]) {
-            NSJSONWritingOptions options = NSJSONWritingPrettyPrinted;
+            NSJSONWritingOptions options = NSJSONWritingPrettyPrinted | NSJSONWritingSortedKeys;
             NSData *data = [NSJSONSerialization dataWithJSONObject:self.JSON options:options error:nil];
             NSString *o = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             _parsedJSON = o;
